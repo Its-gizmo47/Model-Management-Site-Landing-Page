@@ -1,0 +1,283 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto');
+
+@font-face {
+    font-family: Monument;
+    src: url(../MonumentExtended-FreeForPersonalUse/MonumentExtended-Regular.otf);
+}
+                
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+
+}
+
+html, body{
+    height: 100%;
+    width: 100%;
+    background-color: #f8f8f8;
+}
+
+main{
+    /* background-color: aqua; */
+    padding-top: 0.1px;
+}
+
+nav{
+    margin-top: 4vh;
+    height: 12vh;
+    width: 100%;
+    border-bottom: 2px solid black;
+    border-top: 2px solid black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav h1{
+    font-family: monument;
+    letter-spacing: -1px;
+    font-size: 3vw;
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+nav h1::after{
+    content: '©';
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.3vw;
+    font-weight: 300;
+    position: absolute;
+    top: 5px;
+    right: 10px;
+}
+
+nav h1::before{
+    content: 'model management';
+    font-family: 'Roboto', sans-serif;
+    letter-spacing: 0px;
+    font-size: 1.1vw;
+    color: #666;
+    font-weight: 300;
+    position: absolute;
+    bottom: -7px;
+    right: 50px;
+}
+
+nav h4{
+    height: 100%;
+    width: 20%;
+    font-size: 1.4vw;
+    font-weight: 400;
+    border-right: 2px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav h4:nth-last-child(1){
+    border: none;
+    width: 10%;
+}
+
+nav h4:nth-last-child(2){
+    width: 30%;
+}
+
+
+.bg-vid{
+    height: 90vh;
+    margin: 2vw;
+    position: relative;
+    overflow: hidden;
+}
+
+.bg-vid video{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.bg-vid .overlay{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: fit-content;
+    width: 100%;
+    background-color: rgba(0,0,0,0.2);
+    padding: 4vw;
+    padding-bottom: 1vw;
+    color: white;
+}
+
+.overlay-text{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 1vw;
+}
+
+.overlay-text h1{
+    font-family: monument;
+    font-size: 4vw;
+}
+
+.overlay-text h4{
+    border: 2px solid #fff;
+    border-radius: 50%;
+    padding: 2.5vw;
+
+}
+.overlay-bottom{
+    padding-top: 1vw;
+    height: 40%;
+    border-top: 2px solid #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.overlay-bottom img{
+    height: 5vw;
+}
+
+.slider{
+    height: 30vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    white-space: nowrap;
+    overflow-x: hidden;
+}
+
+.slider-circles{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 2vw;
+    margin-left: 2vw;
+    animation: slider-circle 7s linear infinite;
+    animation-fill-mode: forwards;
+}
+.slider-circles .circle{
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    display: inline-block;
+    overflow: hidden;
+    flex-shrink: 0;    
+}
+
+.circle img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+
+
+@keyframes slider-circle {
+    from{
+        transform: translate(0);
+    }
+    to{
+        transform: translate(calc(-100% - 2vw));
+    }
+}
+
+
+
+
+
+
+@media (max-width:640px) {
+    
+nav{
+    margin-top: 2vh;
+    height: 8vh;
+    justify-content: center;
+}
+
+nav h1{
+    font-size: 6vw;
+    font-weight: 100;
+    width: 40%;
+}
+
+nav h1::after{
+    font-size: 3.3vw;
+    top: 2px;
+    right: 0px;
+}
+
+nav h1::before{
+    font-size: 2.1vw;
+    bottom: -7px;
+    right: 20px;
+}
+
+nav h4{
+    display: none;
+}
+
+
+.bg-vid{
+    height: 50vh;
+    margin: 4vw;
+    margin-top: 10vw;
+}
+
+.bg-vid .overlay{
+    padding: 4vw;
+}
+
+.overlay-text{
+    padding-bottom: 2vw;
+}
+
+.overlay-text h1{
+    font-size: 4vw;
+    font-weight: 100;
+    letter-spacing: 1px;
+}
+
+.overlay-bottom{
+    padding-top: 1.5vw;
+}
+
+.overlay-bottom img{
+    height: 5vw;
+}
+
+.slider{
+    height: 20vh;
+}
+
+.slider-circles{
+    gap: 5.4vw;
+    margin-left: 5vw;
+    animation: slider-circle 12s linear infinite;
+}
+.slider-circles .circle{
+    height: 100px;
+    width: 100px;
+}
+
+
+@keyframes slider-circle {
+    from{
+        transform: translate(0);
+    }
+    to{
+        transform: translate(calc(-100% - 5.4vw));
+    }
+}
+
+
+}
